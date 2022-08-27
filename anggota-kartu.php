@@ -3,15 +3,16 @@ require "vendor/autoload.php";
 include "koneksi.php";
 if (@$_GET['id']) {
     $id = @$_GET['id'];
-    $hasil = mysqli_query($koneksi, "SELECT * FROM anggota WHERE id_anggota = '.$id.'");
+    $sql = "SELECT * FROM anggota WHERE id_anggota = '.$id.'";
+    $query = $koneksi->query($sql);
+    $anggota = $query->fetch_array();
 }
 // reference the Dompdf namespace
 use Dompdf\Dompdf;
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
-foreach ($hasi as $key => $anggota) {
-    $html = "
+$html = "
 <style>
 .kartu {
     border: 3px solid black;
@@ -66,13 +67,15 @@ foreach ($hasi as $key => $anggota) {
     </div>
 </body>
 ";
-}
+$options = $dompdf->getOptions();
+$options->setIsRemoteEnabled(ture);
+$dompdf->setOptions($options);
 $dompdf->loadHtml($html);
 
 // (Optional) Setup the paper size and orientation
 // $dompdf->setPaper([0, 0, 153.0141733, 242.6456694], 'landscape');
 $dompdf->setPaper("A5", 'landscape');
 
-
+$dompdf->render();
 // Output the generated PDF to Browser
-$dompdf->stream();
+$dompdf->stream('Kartu ' . $anggota['nama']);
