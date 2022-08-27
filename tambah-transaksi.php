@@ -19,7 +19,7 @@ if (@$_GET['id_transaksi']) {
                 <div class="form-group">
                     <label for="nama">Nama Anggota</label>
                     <select name="nama" class="anggota custom-select">
-                        <option selected><?= @$edit['nama'] ?></option>
+                        <option hidden selected value="<?= @$edit['id_anggota'] ?>"><?= @$edit['nama'] ?></option>
                         <?php foreach ($anggota as $key => $value) { ?>
                             <option value="<?= $value['id_anggota'] ?>"><?= $value['nama'] ?></option>
                         <?php } ?>
@@ -29,7 +29,7 @@ if (@$_GET['id_transaksi']) {
                 <div class="form-group">
                     <label for="buku">Judul Buku</label>
                     <select name="buku" class="buku custom-select">
-                        <option hidden><?= @$edit['id_buku'] ?></option>
+                        <option hidden selected value="<?= @$edit['id_buku'] ?>"><?= @$edit['judul'] ?></option>
                         <?php foreach ($buku as $key => $value) { ?>
                             <option value="<?= $value['id_buku'] ?>"><?= $value['kode_buku'] ?> | <?= $value['judul'] ?></option>
                         <?php } ?>
@@ -52,7 +52,7 @@ if (@$_GET['id_transaksi']) {
                         <input type="date" name="tanggal_kembali" class="form-control">
                     </div>
                 <?php } ?>
-                <input type="hidden" name="id" value="<?= @$edit['id_transaksi'] ?>">
+                <input type="hidden" name="id" value="<?= @$_GET['id_transaksi'] ?>">
                 <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
 
             </form>

@@ -28,5 +28,3 @@
         mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
         header('location:tampil-buku.php?tambah=sukses');
     }
-    
-?>

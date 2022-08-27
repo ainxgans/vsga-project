@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (@$_SESSION['sesi'] == null) {
     header('location:login.php');
@@ -6,6 +6,7 @@ if (@$_SESSION['sesi'] == null) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@ if (@$_SESSION['sesi'] == null) {
     <link rel="stylesheet" href="css/select2.min.css">
     <title>SIM Perpus</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -27,19 +29,14 @@ if (@$_SESSION['sesi'] == null) {
                         <a href="index.php" class="nav-link">Beranda <span class="sr-only">(current)</span> </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggler" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Data Master</a>
+                        <a href="#" class="nav-link dropdown-toggler" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Master</a>
                         <div class="dropdown-menu">
-                            <a href="tampil.php" class="dropdown-item">Anggota</a>
+                            <a href="tampil-anggota.php" class="dropdown-item">Anggota</a>
                             <a href="tampil-buku.php" class="dropdown-item">Buku</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                         <a href="#" class="nav-link dropdown-toggler" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
-                            Transaksi</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Peminjaman</a>
-                                <a href="#" class="dropdown-item">Pengembalian</a>
-                            </div>
+                        <a href="tampil-transaksi.php" class="nav-link">Transaksi</a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link">Laporan</a>
