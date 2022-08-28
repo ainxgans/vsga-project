@@ -15,13 +15,13 @@ if (@$_POST['id']) {
         tanggal_kembali_asli = '$tanggal_kembali_asli'
         WHERE id_transaksi = '$id'";
     mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
-    // header('location:tampil-transaksi.php?update=sukses');
+    header('location:tampil-transaksi.php?update=sukses');
 } elseif (@$_GET['id']) {
     $id = $_GET['id'];
     mysqli_query($koneksi, "DELETE FROM transaksi WHERE id_transaksi = '$id'") or die(mysqli_error($koneksi));
-    header('location:tampil-buku.php?delete=sukses');
+    header('location:tampil-transaksi.php?delete=sukses');
 } else {
     $query = "INSERT INTO transaksi (id_anggota, id_buku, tanggal_pinjam, tanggal_kembali_asli) VALUES ('$id_anggota','$id_buku','$tanggal_pinjam','$tanggal_kembali_asli')";
     mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
-    header('location:tampil-buku.php?tambah=sukses');
+    header('location:tampil-transaksi.php?tambah=sukses');
 }

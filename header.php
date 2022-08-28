@@ -43,5 +43,8 @@ if (@$_SESSION['sesi'] == null) {
                     </li>
                 </ul>
             </div>
+            <form action="logout.php" method="post">
+                <button class="btn btn-outline-danger" type="submit">Logout</button>
+            </form>
         </div>
     </nav>

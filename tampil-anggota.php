@@ -6,19 +6,18 @@
             <a href="tambah-anggota.php" class="btn btn-primary">Tambah Data</a>
             <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="anggota-print-excel.php" class="btn btn-success" target="_blank">Print</a>
-                <a href="anggota-print.php" class="btn btn-info"></a>
             </div>
             <br><br>
             <?php
-            if (@$_GET['status'] == 'tambah') {
+            if (@$_GET['tambah'] == 'sukses') {
                 $color = 'success';
-                $msg = 'Data mahasiswa berhasil di tambah';
-            } elseif (@$_GET['status'] == 'update') {
+                $msg = 'Data Anggota berhasil di tambah';
+            } elseif (@$_GET['update'] == 'sukses') {
                 $color = 'info';
-                $msg = 'Data mahasiswa berhasil diubah';
-            } elseif (@$_GET['status'] == 'delete') {
+                $msg = 'Data Anggota berhasil diubah';
+            } elseif (@$_GET['delete'] == 'sukses') {
                 $color = 'danger';
-                $msg = 'Data mahasiswa berhasil dihapus';
+                $msg = 'Data Anggota berhasil dihapus';
             } else {
                 $msg = '';
             }

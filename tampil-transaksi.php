@@ -2,22 +2,22 @@
 <div class="container">
     <div class="card card-light">
         <div class="card-body">
-            <h1>Data Buku</h1>
+            <h1>Data Transaksi </h1>
             <a href="tambah-transaksi.php" class="btn btn-primary">Tambah Data</a>
             <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="anggota-print-excel.php" class="btn btn-success" target="_blank">Print</a>
+                <a href="cetak-transaksi.php" class="btn btn-success" target="_blank">Print</a>
             </div>
             <br><br>
             <?php
-            if (@$_GET['status'] == 'tambah') {
+            if (@$_GET['tambah'] == 'sukses') {
                 $color = 'success';
-                $msg = 'Data Buku berhasil di tambah';
-            } elseif (@$_GET['status'] == 'update') {
+                $msg = 'Data Transaksi berhasil di tambah';
+            } elseif (@$_GET['update'] == 'sukses') {
                 $color = 'info';
-                $msg = 'Data Buku berhasil diubah';
-            } elseif (@$_GET['status'] == 'delete') {
+                $msg = 'Data Transaksi berhasil diubah';
+            } elseif (@$_GET['delete'] == 'sukses') {
                 $color = 'danger';
-                $msg = 'Data Buku berhasil dihapus';
+                $msg = 'Data Transaksi berhasil dihapus';
             } else {
                 $msg = '';
             }
